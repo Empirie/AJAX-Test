@@ -1,6 +1,22 @@
 package ch.fhnw.acrm.products;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Products {
+
+    @Id
+    @SequenceGenerator(
+            name = "product_sequence",
+            sequenceName = "product_sequence",
+            allocationSize = 1
+    )
+
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "product_sequence"
+    )
     private Long id;
     private String name;
     private double price;
