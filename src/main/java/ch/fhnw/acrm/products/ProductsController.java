@@ -15,13 +15,11 @@ import java.util.List;
 @RequestMapping(path = "api/v1/products")
 public class ProductsController {
 
-    private final ProductsRepository productsRepository;
 
     private final ProductsService productsService;
 
     @Autowired
-    public ProductsController(ProductsRepository productsRepository, ProductsService productsService) {
-        this.productsRepository = productsRepository;
+    public ProductsController(ProductsService productsService) {
         this.productsService = productsService;
     }
 

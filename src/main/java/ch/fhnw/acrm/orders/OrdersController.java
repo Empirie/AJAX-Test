@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrdersController {
 
     //inject repository in service UNSURE!!!!
-    private final OrdersRepository ordersRepository;
+
     private final OrdersService ordersService;
 
 
     @Autowired
-    public OrdersController(OrdersRepository ordersRepository, OrdersService ordersService){
-        this.ordersRepository = ordersRepository;
+    public OrdersController(OrdersService ordersService){
         this.ordersService = ordersService;}
 
 
