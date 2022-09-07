@@ -17,6 +17,8 @@ public class Products {
             strategy = GenerationType.SEQUENCE,
             generator = "product_sequence"
     )
+
+
     private Long id;
     private String name;
     private double price;
