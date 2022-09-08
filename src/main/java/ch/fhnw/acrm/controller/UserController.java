@@ -15,7 +15,6 @@ import org.springframework.web.server.ResponseStatusException;
 import ch.fhnw.acrm.data.domain.Agent;
 
 @Controller
-@RequestMapping(path = "/user")
 public class UserController {
 
     @Autowired
@@ -23,12 +22,12 @@ public class UserController {
 
     @GetMapping("/login")
     public String getLoginView() {
-        return "user/login.html";
+        return "offlogin";
     }
 
     @GetMapping("/register")
     public String getRegisterView() {
-        return "register.html";
+        return "offregister";
     }
 
     @PostMapping("/register")
@@ -43,7 +42,7 @@ public class UserController {
 
     @GetMapping("/profile/edit")
     public String getProfileView() {
-        return "../user/profile.html";
+        return "offprofile";
     }
 
     @GetMapping("/profile")
