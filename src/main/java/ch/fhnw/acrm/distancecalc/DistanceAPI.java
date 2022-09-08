@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class DistanceAPI {
 
-    private static final String API_KEY = "AIzaSyA_anJ89KC18VQyOx4nRKauhHaQiJbsvoE";
+    private static final String API_KEY = "AIzaSyA_anJ89KC18VQyOw4nRKauhHaQiJbsvoE";
 
     private static String destination;
     public static float[][] distances;
@@ -29,7 +29,7 @@ public class DistanceAPI {
 
     public static long getData(String destination) throws Exception {
 
-        long distance = 1;
+
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
