@@ -34,8 +34,8 @@ private final ProductsRepository productsRepository;
     String getProducts(Model model){
         model.addAttribute("products1", "shit is working");
         model.addAttribute("products2", Arrays.asList(
-                new Products("eFlower", 20, 0.7 ),
-                new Products("fFlower", 40, 1.6)
+                productsRepository.findById(1L),
+                productsRepository.findById(3L)
         ));
         return "productspage";
     }
