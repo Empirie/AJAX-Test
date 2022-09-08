@@ -15,6 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 import ch.fhnw.acrm.data.domain.Agent;
 
 @Controller
+@RequestMapping(path = "/user")
 public class UserController {
 
     @Autowired
@@ -25,12 +26,12 @@ public class UserController {
         return "user/login.html";
     }
 
-    @GetMapping("/user/register")
+    @GetMapping("/register")
     public String getRegisterView() {
         return "register.html";
     }
 
-    @PostMapping("/user/register")
+    @PostMapping("/register")
     public ResponseEntity<Void> postRegister(@RequestBody Agent agent) {
         try {
             agentService.saveAgent(agent);

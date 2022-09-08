@@ -19,5 +19,9 @@ public class OrdersService {
     public List<Orders> getOrders(){
         return ordersRepository.findAll();
     }
+    public void addNewOrder(Orders orders){
+        ordersRepository.save(orders);
+    }
+
 
 }

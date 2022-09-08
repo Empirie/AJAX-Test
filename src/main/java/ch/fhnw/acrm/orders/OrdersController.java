@@ -2,12 +2,10 @@ package ch.fhnw.acrm.orders;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/api/v1/orders")
+@RequestMapping(path = "/orders")
 public class OrdersController {
 
     //inject repository in service UNSURE!!!!
@@ -26,6 +24,10 @@ public class OrdersController {
         return "user/bootstraptest.html";
     }
 
+    @PostMapping(path = "/new")
+    public void createNewOrder(@RequestBody Orders orders){
+        this.ordersService.addNewOrder(orders);
+    }
 
 
 

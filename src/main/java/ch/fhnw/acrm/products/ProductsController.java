@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping(path = "api/v1/products")
+@RequestMapping(path = "/products")
 public class ProductsController {
 
 private final ProductsRepository productsRepository;
@@ -30,7 +30,7 @@ private final ProductsRepository productsRepository;
 
 
 
-    @GetMapping("api/v1/products/ty")
+    @GetMapping("/ty")
     String getProducts(Model model){
         model.addAttribute("products1", "shit is working");
         model.addAttribute("products2", Arrays.asList(
