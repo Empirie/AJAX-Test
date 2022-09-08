@@ -2,25 +2,32 @@ package ch.fhnw.acrm.orders;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping(path = "/orders")
 public class OrdersController {
 
     //inject repository in service UNSURE!!!!
 
     private final OrdersService ordersService;
+    private final OrdersRepository ordersRepository;
 
 
     @Autowired
-    public OrdersController(OrdersService ordersService){
-        this.ordersService = ordersService;}
+    public OrdersController(OrdersService ordersService, OrdersRepository ordersRepository){
+        this.ordersService = ordersService;
+        this.ordersRepository = ordersRepository;
+    }
 
 
 
     @GetMapping
-    public String getOrdersView(){
+    public String getOrdersView(Model model){
+        model.addAttribute("currentorders", ordersRepository.findById(1L).get());
+
         return "user/bootstraptest";
     }
 
