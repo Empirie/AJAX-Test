@@ -41,7 +41,7 @@ public class ProductBootstrap implements CommandLineRunner {
                     3.8
             );
 
-        //save to repo test
+        //use to add new products to db
 
 //        productsRepository.save(aflower);
 //        productsRepository.save(bflower);
