@@ -57,7 +57,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/")
                 .addLogoutHandler(new TokenLogoutHandler(tokenService));
+        //Disabled csrf!!!
+        http.csrf().disable();
     }
+
+    //Test security vonfig
+
+
+
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {

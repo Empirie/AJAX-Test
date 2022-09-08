@@ -3,11 +3,10 @@ package ch.fhnw.acrm.products;
 
 //All resources for API
 
+import ch.fhnw.acrm.orders.Orders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 
@@ -39,6 +38,12 @@ private final ProductsRepository productsRepository;
         ));
         return "productspage";
     }
+
+    @PostMapping(path = "/new")
+    public void createNewProduct(@RequestBody Products product){
+        this.productsService.addNewProduct(product);
+    }
+
 
     //This works!!!
 //    @GetMapping

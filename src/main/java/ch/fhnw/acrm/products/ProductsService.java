@@ -1,5 +1,6 @@
 package ch.fhnw.acrm.products;
 
+import ch.fhnw.acrm.orders.Orders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,10 @@ public class ProductsService {
 
     public List<Products> getProducts(){
         return productsRepository.findAll();
+    }
+
+    public void addNewProduct(Products product){
+        productsRepository.save(product);
     }
 
 

@@ -21,12 +21,14 @@ public class OrdersController {
 
     @GetMapping
     public String getOrdersView(){
-        return "user/bootstraptest.html";
+        return "user/bootstraptest";
     }
 
+
+
     @PostMapping(path = "/new")
-    public void createNewOrder(@RequestBody Orders orders){
-        this.ordersService.addNewOrder(orders);
+    public void createNewOrder(@RequestBody Orders order){
+        this.ordersService.addNewOrder(order);
     }
 
 
