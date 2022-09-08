@@ -1,5 +1,7 @@
 package ch.fhnw.acrm.products;
 
+import ch.fhnw.acrm.orders.Items;
+
 import javax.persistence.*;
 
 @Entity
