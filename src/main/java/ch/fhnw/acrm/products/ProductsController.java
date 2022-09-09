@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-@RequestMapping(path = "/products")
-
 public class ProductsController {
 
 
@@ -32,18 +30,24 @@ public class ProductsController {
 
 
 
-    @GetMapping(path = "/ty")
-    public String getProductsPage(Model model1){
+    @GetMapping(path = "/products")
+    String getProductsPage(Model model1){
 
-        model1.addAttribute("products1", "shit is working");
+        model1.addAttribute("products1", productsRepository.findById(1L).get().getName());
+        model1.addAttribute("products2", productsRepository.findById(2L).get().getName());
+        model1.addAttribute("products3", productsRepository.findById(5L).get().getName());
+        model1.addAttribute("products4", productsRepository.findById(6L).get().getName());
+
 
             return "productspage";
     }
 
-    @PostMapping(path = "/new")
+    @RequestMapping(path = "/new")
     public void createNewProduct(@RequestBody Products product){
         this.productsService.addNewProduct(product);
     }
+
+
 
 
     //This works!!!

@@ -12,7 +12,6 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
-@RequestMapping(path = "/delivery")
 public class DeliveryController {
 
     private final AgentService agentService;
@@ -29,7 +28,7 @@ public class DeliveryController {
     }
 
 
-    @GetMapping(path = "/form")
+    @RequestMapping(path = "/form")
     public String showForm() {
 
         return "userdatainput";
@@ -37,7 +36,7 @@ public class DeliveryController {
 
 
 
-    @GetMapping("/pricing")
+    @RequestMapping(path = "/pricing")
     public String getDeliveryData(Model model) {
         model.addAttribute("distance",
                 deliveryRepository.getById(1L).getStreetname()+
@@ -50,7 +49,7 @@ public class DeliveryController {
 
 
 
-    @PostMapping(path = "/address")
+    @RequestMapping(path = "/address")
     public String addDeliveryAddress(@ModelAttribute("delivery") DeliveryData deliveryData) { this.deliveryService.addNewAddress(deliveryData);
         System.out.println(deliveryData);
         return "index2";
