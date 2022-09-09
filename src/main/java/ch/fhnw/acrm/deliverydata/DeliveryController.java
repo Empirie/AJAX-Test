@@ -6,10 +6,10 @@ import ch.fhnw.acrm.data.repository.AgentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @RequestMapping(path = "/delivery")
@@ -29,6 +29,14 @@ public class DeliveryController {
     }
 
 
+    @GetMapping(path = "/form")
+    public String showForm() {
+
+        return "userdatainput";
+    }
+
+
+
     @GetMapping("/pricing")
     public String getDeliveryData(Model model) {
         model.addAttribute("distance",
@@ -41,8 +49,13 @@ public class DeliveryController {
     }
 
 
+
     @PostMapping(path = "/address")
-    public void addDeliveryAddress(@RequestBody DeliveryData deliveryData) { this.deliveryService.addNewAddress(deliveryData);}
+    public String addDeliveryAddress(@ModelAttribute("delivery") DeliveryData deliveryData) { this.deliveryService.addNewAddress(deliveryData);
+        System.out.println(deliveryData);
+        return "index2";
+
+    }
 
 
 

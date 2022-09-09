@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
 
 <head>
     <meta charset="utf-8">
@@ -24,9 +24,10 @@
 <div ><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> </div>
     <div class="container" style="display:flex;flex-direction:column;justify-content:center;">
         <div class="page-header">
-            <h2 class="text-center"><strong>Settings</strong></h2>
+            <h2 class="text-center"><strong>User Data</strong></h2>
         </div>
         <form id="form" method="post">
+            <input type="text" name="senderFilter" th:value="${filter}" value="Upsi">
             <div class="form-group mb-3"><input class="form-control" type="text" name="name" placeholder="Name"></div>
             <div class="form-group mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
             <div class="form-group mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
@@ -34,8 +35,59 @@
             <div class="form-group mb-3"><input class="form-control" type="number" name="snumber" placeholder="Street Number"></div>
             <div class="form-group mb-3"><input class="form-control" type="number" name="postal" min="1000" max="9999" placeholder="Postal Code"></div>
             <div class="form-group mb-3"><input class="form-control" type="text" name="city" placeholder="City"></div>
-            <div class="form-group mb-3"><button class="btn1 d-block w-100" type="submit">Update</button></div>
+<!--            <div class="form-group mb-3"><button class="btn1 d-block w-100" type="submit">Update</button></div>-->
+            <input type="submit">
         </form>
+
+
+
+<!--        Thymeleaf post test-->
+<!--        <h1 class="py-5">Thymeleaf Form handling Demo</h1>-->
+<!--        <form method="post" th:action="@{/delivery/adresses/}" th:object="${deliveryData}" class="col card p-3 mb-5">-->
+<!--            <div class="form-group">-->
+<!--                <label for="firstName">First Name</label>-->
+<!--                <input id="firstName" placeholder="Enter First Name" required type="text" th:field="*{streetname}"-->
+<!--                       class="form-control"/>-->
+<!--            </div>-->
+
+<!--Best-->
+            <form action="#" th:action="@{/userdatainput}" method="POST" th:object="${de}">
+                <label>Full name:</label>
+                <input type="text" th:field="*{city}" /><br/>
+
+                <label>E-mail:</label>
+                <input type="text" th:field="*{email}" /><br/>
+
+                <label>Password:</label>
+                <input type="password" th:field="*{password}" /><br/>
+
+                <label>Birthday (yyyy-mm-dd):</label>
+                <input type="text" th:field="*{birthday}" /><br/>
+
+                <label>Gender:</label>
+                <input type="radio" th:field="*{gender}" value="Male" />Male
+                <input type="radio" th:field="*{gender}" value="Female" />Female<br/>
+
+                <label>Profession:</label>
+                <select th:field="*{profession}">
+                    <option th:each="p : ${listProfession}" th:value="${p}" th:text="${p}" />
+                </select>
+                <br/>
+
+                <label>Married?</label>
+                <input type="checkbox" th:field="*{married}" /><br/>
+
+                <label>Note:</label>
+                <textarea rows="5" cols="25" th:field="*{note}"></textarea>
+                <br/>
+
+                <button type="submit">Register</button>
+            </form>
+
+
+
+
+
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="error-modal">
         <div class="modal-dialog modal-dialog-centered" role="document">
