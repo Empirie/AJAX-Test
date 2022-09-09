@@ -54,14 +54,16 @@ public class DeliveryData {
         this.cityname = cityname;
     }
 
+
+
+
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        agentService = id;
+    public Long getUserid() {
+        return userid;
     }
-
     public String getStreetname() {
         return streetname;
     }
@@ -98,6 +100,7 @@ public class DeliveryData {
     public String toString() {
         return "DeliveryData{" +
                 "id=" + id +
+                ", userid=" + userid +
                 ", streetname='" + streetname + '\'' +
                 ", streetnumber=" + streetnumber +
                 ", pobox=" + pobox +

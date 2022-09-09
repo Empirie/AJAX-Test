@@ -11,7 +11,8 @@
 
     <title>FoundOne</title>
 </head>
-<body>
+<body class="pt-lg-5">
+
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a
@@ -99,11 +100,41 @@
     </div>
 
 </nav>
-<!--must be updated-->
-<td th:text="${testtl1}">
 
 
+<!--Form-->
 
+<form class="container h-100">
+
+
+    <div class="col-lg-8">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="col-lg-3">
+        <label for="inputAddress2" class="form-label">Street Nr.</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity">
+    </div>
+
+    <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+
+<div class="container-lg my-lg-5">
+
+
+</div>
 
 
 
