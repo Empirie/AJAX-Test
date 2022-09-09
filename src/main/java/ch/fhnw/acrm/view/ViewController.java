@@ -19,11 +19,11 @@ public class ViewController {
         this.ordersRepository = ordersRepository;
     }
 
-    @GetMapping
+    @GetMapping(path = "/indexproduct")
     public String productOneView(Model model){
         model.addAttribute("product1", productsRepository.getById(1L).getName()
                 +productsRepository.getById(1L).getPrice());
-        return ""
+        return "indexproduct";
 
     }
 
