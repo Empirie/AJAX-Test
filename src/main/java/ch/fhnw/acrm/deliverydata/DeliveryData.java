@@ -1,11 +1,17 @@
 package ch.fhnw.acrm.deliverydata;
 
+import ch.fhnw.acrm.business.service.AgentService;
+import ch.fhnw.acrm.controller.UserController;
+import ch.fhnw.acrm.data.domain.Agent;
+
 import javax.persistence.*;
 
 
 @Entity
 @Table
 public class DeliveryData {
+
+
 
 
     @Id
@@ -19,6 +25,7 @@ public class DeliveryData {
             generator = "delivery_sequence"
     )
     private Long id;
+    private Long userid;
     private String streetname;
     private int streetnumber;
     private int pobox;
@@ -30,15 +37,17 @@ public class DeliveryData {
     public DeliveryData() {
     }
 
-    public DeliveryData(Long id, String streetname, int streetnumber, int pobox, String cityname) {
+    public DeliveryData(Long id, Long userid, String streetname, int streetnumber, int pobox, String cityname) {
         this.id = id;
+        this.userid = userid;
         this.streetname = streetname;
         this.streetnumber = streetnumber;
         this.pobox = pobox;
         this.cityname = cityname;
     }
 
-    public DeliveryData(String streetname, int streetnumber, int pobox, String cityname) {
+    public DeliveryData(Long userid, String streetname, int streetnumber, int pobox, String cityname) {
+        this.userid = userid;
         this.streetname = streetname;
         this.streetnumber = streetnumber;
         this.pobox = pobox;
@@ -50,7 +59,7 @@ public class DeliveryData {
     }
 
     public void setId(Long id) {
-        this.id = id;
+        agentService = id;
     }
 
     public String getStreetname() {

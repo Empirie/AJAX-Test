@@ -31,7 +31,13 @@ public class DeliveryController {
 
     @GetMapping("/pricing")
     public String getDeliveryData(Model model) {
-        model.addAttribute("distance", agentService.getCurrentAgent().
+        model.addAttribute("distance",
+                deliveryRepository.getById(1L).getStreetname()+
+                deliveryRepository.getById(1L).getStreetnumber()+
+                deliveryRepository.getById(1L).getPobox()+
+                deliveryRepository.getById(1L).getCityname());
+
+        return "distance";
     }
 
 
