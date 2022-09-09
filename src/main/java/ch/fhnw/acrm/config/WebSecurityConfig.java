@@ -46,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .requireCsrfProtectionMatcher(new CSRFRequestMatcher())
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
             .authorizeRequests()
-                .antMatchers("/", "/assets/**", "/user/**", "/login/**", "/swagger-ui/**",  "/v3/api-docs/**","/products/**", "/orders", "/orders/**", "/ty", "/swagger-resources/**").permitAll()
+                .antMatchers("/", "/assets/**", "/user/**", "/login/**", "/swagger-ui/**", "/indexproduct/" , "/v3/api-docs/**","/products/**", "/orders", "/orders/**", "/ty", "/swagger-resources/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/logout").permitAll()
                 .antMatchers("/profile/edit").hasRole("USER")
                 .anyRequest().authenticated()
@@ -58,7 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/")
                 .addLogoutHandler(new TokenLogoutHandler(tokenService));
         //Disabled csrf!!!
-        http.csrf().disable();
+//        http.csrf().disable();
     }
 
     //Test security vonfig
