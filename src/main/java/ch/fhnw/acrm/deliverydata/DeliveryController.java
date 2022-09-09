@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping
+@RequestMapping(path = "/delivery")
 public class DeliveryController {
 
     private final AgentService agentService;
@@ -27,13 +29,14 @@ public class DeliveryController {
     }
 
 
-    @GetMapping
+    @GetMapping("/pricing")
     public String getDeliveryData(Model model) {
         model.addAttribute("distance", agentService.getCurrentAgent().
     }
 
 
-
+    @PostMapping(path = "/address")
+    public void addDeliveryAddress(@RequestBody DeliveryData deliveryData) { this.deliveryService.addNewAddress(deliveryData);}
 
 
 
