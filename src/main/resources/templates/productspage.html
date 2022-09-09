@@ -1,5 +1,6 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <!--thymeleaf implementation still needs to be done-->
 <head>
     <!-- Required meta tags -->
@@ -105,6 +106,8 @@ Bla
     Bla
 
 </div>
+
+<!--Thymeleaf post template-->
 <h1 th:text="${products1}"/>
 <!--must be updated-->
 <h1 th:text="${products1}"/>
@@ -116,7 +119,34 @@ Bla
 <h1 th:text="${products1}"/>
 
 
+<h2>New Product</h2>
+<!--Form-->
+<form th:action="@{products/save}" th:object="${}" method="post">
+    <div class="form-group row">
+        <label for="name">Name</label>
+           <input type="text" name="name">  <input>
 
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </div>
+</form>
 
 
 
