@@ -26,10 +26,10 @@ public class ProductsController {
         this.productsRepository = productsRepository;
     }
 
-@RequestMapping(path = "/products")
-public String productindex(){
-        return "productspage";
-}
+//@RequestMapping(path = "/products")
+//public String productindex(){
+//        return "productspage";
+//}
 
 
 
@@ -45,8 +45,26 @@ public String productindex(){
 //            return "productspage";
 //    }
 
-    @PostMapping(path = "/save")
-    public String
+
+//
+//        @GetMapping(value = "/save")
+//        public ModelAndView showProductForm(@RequestParam Long id){
+//
+//
+//        //Code to save data
+//        ModelAndView mav = new ModelAndView("productspage");
+//        Products newProduct = new Products();
+////        mav.setViewName("products_info");
+//        mav.addObject("products", newProduct);
+//                return mav;
+//    }
+//
+//
+//    @PostMapping(path = "/save")
+//    public String saveProduct(@ModelAttribute Products products) {
+//        productsRepository.save(products);
+//        return "product_info";
+//    }
 
 //
 //    @RequestMapping(path = "/new")
@@ -82,4 +100,32 @@ public String productindex(){
 //    }
 
 
+
+    @GetMapping({"/product_list"})
+    public ModelAndView getAllProducts() {
+        ModelAndView mav = new ModelAndView("list-products");
+        mav.addObject("products", productsRepository.findAll());
+        return mav;
+    }
+
+    @GetMapping("/products")
+    public ModelAndView addProductsForm() {
+        ModelAndView mav = new ModelAndView("productspage");
+        Products newProduct = new Products();
+        mav.addObject("product", newProduct);
+        return mav;
+    }
+
+    @PostMapping("/saveProduct")
+    public String saveProduct(@ModelAttribute Products employee) {
+        productsRepository.save(employee);
+        return "product_info";
+    }
+
+
+    @GetMapping("/deleteProducts")
+    public String deleteProduct(@RequestParam Long id) {
+        productsRepository.deleteById(id);
+        return "redirect:/list";
+    }
 }
