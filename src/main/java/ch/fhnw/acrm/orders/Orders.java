@@ -22,6 +22,7 @@ public class Orders {
     private Long customer_id;
     private int product_quantity;
 
+
     //Constructors
 
 
