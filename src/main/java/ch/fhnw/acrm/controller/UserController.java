@@ -30,7 +30,7 @@ public class UserController {
         return "offregister";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/user/register")
     public ResponseEntity<Void> postRegister(@RequestBody Agent agent) {
         try {
             agentService.saveAgent(agent);
