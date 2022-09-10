@@ -1,6 +1,7 @@
 package ch.fhnw.acrm.deliverydata;
 
 
+import ch.fhnw.acrm.products.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,16 +19,19 @@ public class DeliveryService {
         this.deliveryRepository = deliveryRepository;
     }
 
-    @RequestMapping
-    public void addNewAddress(DeliveryData deliveryData){
-        deliveryRepository.save(deliveryData);
-    }
 
-
-
-    public List<DeliveryData> getDeliveryData() {
+  public List<DeliveryData> getDeliveryData(){
         return deliveryRepository.findAll();
     }
+
+    public void addNewDeliveryData(DeliveryData deliveryData){
+       deliveryRepository.save(deliveryData);
+    }
+
+    void save(DeliveryData deliveryData) {
+
+    }
+
 
 //    @RequestMapping(path = "/products/create")
 //    public void addStreetName(DeliveryRepository deliveryRepository){

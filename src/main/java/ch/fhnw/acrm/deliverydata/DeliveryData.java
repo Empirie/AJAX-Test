@@ -25,11 +25,15 @@ public class DeliveryData {
             generator = "delivery_sequence"
     )
     private Long id;
-    private Long userid;
+
     private String streetname;
     private int streetnumber;
     private int pobox;
     private String cityname;
+
+    @OneToOne
+    @JoinColumn(name = "agent_id")
+    private Agent agent;
 
 //    Constructors
 
@@ -39,15 +43,13 @@ public class DeliveryData {
 
     public DeliveryData(Long id, Long userid, String streetname, int streetnumber, int pobox, String cityname) {
         this.id = id;
-        this.userid = userid;
         this.streetname = streetname;
         this.streetnumber = streetnumber;
         this.pobox = pobox;
         this.cityname = cityname;
     }
 
-    public DeliveryData(Long userid, String streetname, int streetnumber, int pobox, String cityname) {
-        this.userid = userid;
+    public DeliveryData(String streetname, int streetnumber, int pobox, String cityname) {
         this.streetname = streetname;
         this.streetnumber = streetnumber;
         this.pobox = pobox;
@@ -61,9 +63,6 @@ public class DeliveryData {
         return id;
     }
 
-    public Long getUserid() {
-        return userid;
-    }
     public String getStreetname() {
         return streetname;
     }
@@ -96,15 +95,23 @@ public class DeliveryData {
         this.cityname = cityname;
     }
 
+    public Agent getAgent() {
+        return agent;
+    }
+
+    public void setAgent(Agent agent) {
+        this.agent = agent;
+    }
+
     @Override
     public String toString() {
         return "DeliveryData{" +
                 "id=" + id +
-                ", userid=" + userid +
                 ", streetname='" + streetname + '\'' +
                 ", streetnumber=" + streetnumber +
                 ", pobox=" + pobox +
                 ", cityname='" + cityname + '\'' +
+                ", agent=" + agent +
                 '}';
     }
 }

@@ -84,7 +84,7 @@ public class DeliveryController {
     }
 
 
-    @GetMapping("/showUpdateForm")
+    @GetMapping("/showUpdateFormDelivery")
     public ModelAndView showUpdateForm(@RequestParam Long id) {
         ModelAndView mav = new ModelAndView("delivery/save-delivery-page");
         DeliveryData delivery = deliveryRepository.findById(id).get();

@@ -5,6 +5,7 @@
 
 package ch.fhnw.acrm.data.domain;
 
+import ch.fhnw.acrm.deliverydata.DeliveryData;
 import ch.fhnw.acrm.orders.Orders;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -34,6 +35,9 @@ public class Agent {
 	@OneToMany(mappedBy = "agent")
 	@JsonIgnore
 	private List<Orders> orders;
+
+	@OneToOne
+	private DeliveryData deliveryData;
 
 	public Long getId() {
 		return id;

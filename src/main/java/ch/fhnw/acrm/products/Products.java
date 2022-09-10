@@ -1,5 +1,6 @@
 package ch.fhnw.acrm.products;
 
+import ch.fhnw.acrm.data.domain.Agent;
 import ch.fhnw.acrm.orders.Items;
 
 import javax.persistence.*;
@@ -23,6 +24,8 @@ public class Products {
     private String name;
     private double price;
     private double palletSize;
+
+
 
     //Constructors
 

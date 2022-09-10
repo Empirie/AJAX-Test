@@ -12,16 +12,18 @@
 
 <div class="container">
 
-    <h3>Add New Product</h3>
+    <h3>Add New Delivery address</h3>
     <hr/>
 
-    <form th:action="@{/saveProduct}" th:object="${product}" method="POST">
+    <form th:action="@{/saveDelivery}" th:object="${delivery}" method="POST">
 
-        <input type="text" th:field="*{name}" class="form-control col-4 mb-4" placeholder="Enter Name" />
+        <input type="text" th:field="*{streetname}" class="form-control col-4 mb-4" placeholder="Enter Streetname" />
 
-        <input type="text" th:field="*{price}" class="form-control col-4 mb-4" placeholder="Enter Price" />
+        <input type="text" th:field="*{streetnumber}" class="form-control col-4 mb-4" placeholder="Enter Street Number" />
 
-        <input type="text" th:field="*{palletSize}" class="form-control col-4 mb-4" placeholder="Enter Pallet Size" />
+        <input type="text" th:field="*{pobox}" class="form-control col-4 mb-4" placeholder="Enter POBox" />
+
+        <input type="text" th:field="*{cityname}" class="form-control col-4 mb-4" placeholder="Enter City Name" />
 
         <button type="submit" class="btn btn-primary col-2">Save</button>
         <input type="hidden" th:field="*{id}" />
