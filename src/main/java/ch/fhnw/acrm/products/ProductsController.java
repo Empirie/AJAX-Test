@@ -103,14 +103,14 @@ public class ProductsController {
 
     @GetMapping({"/product_list"})
     public ModelAndView getAllProducts() {
-        ModelAndView mav = new ModelAndView("list-products");
+        ModelAndView mav = new ModelAndView("products/list-products-page");
         mav.addObject("products", productsRepository.findAll());
         return mav;
     }
 
     @GetMapping("/products")
     public ModelAndView addProductsForm() {
-        ModelAndView mav = new ModelAndView("productspage");
+        ModelAndView mav = new ModelAndView("products/save-products-page");
         Products newProduct = new Products();
         mav.addObject("product", newProduct);
         return mav;
@@ -122,6 +122,14 @@ public class ProductsController {
         return "product_info";
     }
 
+
+    @GetMapping("/showUpdateForm")
+    public ModelAndView showUpdateForm(@RequestParam Long employeeId) {
+        ModelAndView mav = new ModelAndView("add-employee-form");
+        Employee employee = eRepo.findById(employeeId).get();
+        mav.addObject("employee", employee);
+        return mav;
+    }
 
     @GetMapping("/deleteProducts")
     public String deleteProduct(@RequestParam Long id) {
