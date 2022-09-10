@@ -1,14 +1,13 @@
 package ch.fhnw.acrm.distancecalc;
 
+import ch.fhnw.acrm.deliverydata.DeliveryData;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import java.io.IOException;
-import java.net.URI;
+
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Scanner;
 
 public class DistanceAPI {
 
@@ -20,9 +19,11 @@ public class DistanceAPI {
     public static final String ORIGIN_ADDRESS = "PeterMerian-Strasse86,4052Basel";
     private static long distance = 1;
 
+    private DeliveryData deliveryData;
 
-
-
+    public DistanceAPI(DeliveryData deliveryData) {
+        this.deliveryData = deliveryData;
+    }
 
 
     //downloading the data
