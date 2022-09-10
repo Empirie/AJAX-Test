@@ -1,5 +1,9 @@
 package ch.fhnw.acrm.orders;
 
+import ch.fhnw.acrm.data.domain.Agent;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.mapping.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,6 +25,15 @@ public class Orders {
     private Long product_id;
     private Long customer_id;
     private int product_quantity;
+
+    @ManyToOne
+    @JsonIgnore
+    private Agent agent;
+
+
+
+
+
 
 
     //Constructors
@@ -82,6 +95,14 @@ public class Orders {
                 ", customer_id=" + customer_id +
                 ", product_quantity=" + product_quantity +
                 '}';
+    }
+
+    public Agent getAgent() {
+        return agent;
+    }
+
+    public void setAgent(Agent agent) {
+        this.agent = agent;
     }
 }
 

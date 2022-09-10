@@ -124,10 +124,10 @@ public class ProductsController {
 
 
     @GetMapping("/showUpdateForm")
-    public ModelAndView showUpdateForm(@RequestParam Long employeeId) {
-        ModelAndView mav = new ModelAndView("add-employee-form");
-        Employee employee = eRepo.findById(employeeId).get();
-        mav.addObject("employee", employee);
+    public ModelAndView showUpdateForm(@RequestParam Long id) {
+        ModelAndView mav = new ModelAndView("products/save-products-page");
+        Products product = productsRepository.findById(id).get();
+        mav.addObject("product", product);
         return mav;
     }
 

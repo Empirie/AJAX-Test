@@ -5,6 +5,7 @@
 
 package ch.fhnw.acrm.data.domain;
 
+import ch.fhnw.acrm.orders.Orders;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -32,7 +33,7 @@ public class Agent {
 	private String remember;
 	@OneToMany(mappedBy = "agent")
 	@JsonIgnore
-	private List<Customer> customers;
+	private List<Orders> orders;
 
 	public Long getId() {
 		return id;
@@ -68,12 +69,12 @@ public class Agent {
 		this.password = password;
 	}
 
-	public List<Customer> getCustomers() {
-		return customers;
+	public List<Orders> getOrders() {
+		return orders;
 	}
 
-	public void setCustomers(List<Customer> customers) {
-		this.customers = customers;
+	public void setOrders(List<Orders> orders) {
+		this.orders = orders;
 	}
 
 	public String getRemember() {
