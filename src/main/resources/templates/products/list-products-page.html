@@ -14,37 +14,60 @@
 
 <body>
 
+Established locale country: <span th:text="${#locale.country}">US</span>
+
 <div class="container">
 
     <h3>List Products</h3>
 
     <hr/>
-    <a th:href="@{/addProductsForm}" class="btn btn-primary">Add Products</a>
+    <a th:href="@{/list-products-page}" th:object="${products}" methods="" class="btn btn-primary">Add Products</a>
     <br/><br/>
+
+<!--    Thymeleaf requires you to specify the command object by using a th:object attribute in your <form> tag:-->
+
+
+
+        <form action="#" th:action="${products}" method="GET">
+
+            <a>
+                <input type="text" id="datePlanted" name="datePlanted" th:value="*{datePlanted}" />
+
+
+            </a>
+
+
+
+
     <table class="table table-bordered table-striped" id="employeeTable">
 
         <thead>
         <tr>
             <th>Name</th>
-            <th>Email</th>
-            <th>Department</th>
+            <th>Price</th>
+            <th>PalletSize</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="employee: ${employees}">
-            <td th:text="${employee.name}" />
-            <td th:text="${employee.email}" />
-            <td th:text="${employee.department}" />
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}" />
+            <td th:text="${product.palletSize}" />
+            <td th:text="${product.price}" />
             <td>
-                <a th:href="@{/showUpdateForm(employeeId=${employee.id})}" class="btn btn-info">Update</a>
+<!--                <a th:href="@{/showUpdateForm(employeeId=${employee.id})}" class="btn btn-info">Update</a>-->
 
-                <a th:href="@{/deleteEmployee(employeeId=${employee.id})}" class="btn btn-danger ml-2">Delete</a>
+<!--                <a th:href="@{/deleteEmployee(employeeId=${employee.id})}" class="btn btn-danger ml-2">Delete</a>-->
             </td>
         </tr>
         </tbody>
 
     </table>
+
+
+        </form>
+
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
