@@ -123,8 +123,8 @@ public class ProductsController {
     }
 
 
-    @GetMapping("/showUpdateForm")
-    public ModelAndView showUpdateForm(@RequestParam Long id) {
+    @GetMapping("/showUpdateFormDelivery")
+    public ModelAndView showUpdateFormDelivery(@RequestParam Long id) {
         ModelAndView mav = new ModelAndView("products/save-products-page");
         Products product = productsRepository.findById(id).get();
         mav.addObject("product", product);

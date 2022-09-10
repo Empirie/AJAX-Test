@@ -62,10 +62,10 @@ public class DeliveryController {
 
 
 
-    @GetMapping({"/product_list"})
-    public ModelAndView listAllProducts() {
-        ModelAndView mav = new ModelAndView("products/list-products-page");
-        mav.addObject("products", productsRepository.findAll());
+    @GetMapping({"/delivery_list"})
+    public ModelAndView listAllDelivery() {
+        ModelAndView mav = new ModelAndView("delivery/list-delivery-page");
+        mav.addObject("delivery", deliveryRepository.findAll());
         return mav;
     }
 
@@ -80,13 +80,13 @@ public class DeliveryController {
     @PostMapping("/saveDelivery")
     public String saveDelivery(@ModelAttribute DeliveryData delivery) {
         deliveryRepository.save(delivery);
-        return "product_info";
+        return "delivery_info";
     }
 
 
     @GetMapping("/showUpdateForm")
     public ModelAndView showUpdateForm(@RequestParam Long id) {
-        ModelAndView mav = new ModelAndView("products/save-products-page");
+        ModelAndView mav = new ModelAndView("delivery/save-delivery-page");
         DeliveryData delivery = deliveryRepository.findById(id).get();
         mav.addObject("delivery", delivery);
         return mav;
