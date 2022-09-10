@@ -26,7 +26,7 @@ public class TestControllerTL {
 
     @GetMapping(path = "/ty")
     String getTestTL(Model model){
-        model.addAttribute("testtl1", "shit is working");
+        model.addAttribute("testtl3", "shit is working");
         model.addAttribute("testtl1", productsRepository.findById(1L).get().getPrice());
         model.addAttribute("testtl2", Arrays.asList(
                 new TestTL("eFlower", 20, 0.7 ),
