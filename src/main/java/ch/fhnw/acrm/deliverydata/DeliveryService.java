@@ -32,7 +32,7 @@ public class DeliveryService {
 
     }
 
-    public String sfssdef
+    public String sfssdef;
 
 
 //    @RequestMapping(path = "/products/create")

@@ -3,14 +3,7 @@ security:
     secret: mysecret-which-needs-to-be-of-at-least-512bit-long!please-change
 
 
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost/foundone
-    username: postgres
-    password: Start123
-  jpa:
-    hibernate:
-      ddl-auto: update
+
 
 #spring:
 #  datasource:
