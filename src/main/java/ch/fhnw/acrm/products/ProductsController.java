@@ -117,8 +117,8 @@ public class ProductsController {
     }
 
     @PostMapping("/saveProduct")
-    public String saveProduct(@ModelAttribute Products employee) {
-        productsRepository.save(employee);
+    public String saveProduct(@ModelAttribute Products products) {
+        productsRepository.save(products);
         return "product_info";
     }
 
