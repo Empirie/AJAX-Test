@@ -36,7 +36,7 @@ public class Agent {
 	@JsonIgnore
 	private List<Orders> orders;
 
-	@OneToOne
+	@OneToOne(mappedBy = "agent")
 	private DeliveryData deliveryData;
 
 	public Long getId() {

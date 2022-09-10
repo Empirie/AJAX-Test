@@ -80,7 +80,7 @@ public class DeliveryController {
     @PostMapping("/saveDelivery")
     public String saveDelivery(@ModelAttribute DeliveryData delivery) {
         deliveryRepository.save(delivery);
-        return "delivery_info";
+        return "delivery/delivery_info";
     }
 
 

@@ -32,7 +32,7 @@ public class DeliveryData {
     private String cityname;
 
     @OneToOne
-    @JoinColumn(name = "agent_id")
+    @JoinColumn
     private Agent agent;
 
 //    Constructors
@@ -99,9 +99,7 @@ public class DeliveryData {
         return agent;
     }
 
-    public void setAgent(Agent agent) {
-        this.agent = agent;
-    }
+
 
     @Override
     public String toString() {
