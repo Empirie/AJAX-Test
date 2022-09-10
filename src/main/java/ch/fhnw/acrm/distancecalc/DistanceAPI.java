@@ -1,15 +1,22 @@
 package ch.fhnw.acrm.distancecalc;
 
+import ch.fhnw.acrm.business.service.AgentService;
 import ch.fhnw.acrm.deliverydata.DeliveryData;
+import ch.fhnw.acrm.deliverydata.DeliveryService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+
 public class DistanceAPI {
+
+
 
     private static final String API_KEY = "AIzaSyA_anJ89KC18VQyOw4nRKauhHaQiJbsvoE";
 
@@ -20,9 +27,24 @@ public class DistanceAPI {
     private static long distance = 1;
 
     private DeliveryData deliveryData;
+    private AgentService agentService;
+    public DeliveryService deliveryService;
 
-    public DistanceAPI(DeliveryData deliveryData) {
+    public DistanceAPI(DeliveryData deliveryData, AgentService agentService, DeliveryService deliveryService) {
         this.deliveryData = deliveryData;
+        this.agentService = agentService;
+        this.deliveryService = deliveryService;
+    }
+
+    public DistanceAPI() {
+
+    }
+
+
+    public String getGod(){
+        String god = deliveryService.getGodString();
+
+        return god;
     }
 
 
@@ -57,11 +79,17 @@ public class DistanceAPI {
 
     }
 
+
+
+
     public static void main(String[] args) throws Exception {
 
         System.out.println("Let's see");
+
         getData("Florastrasse40,4057Basel");
         System.out.println("Did it work above?");
+        System.out.println();
+
 
 
 
