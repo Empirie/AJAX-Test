@@ -2,6 +2,7 @@ package ch.fhnw.acrm.orders;
 
 import ch.fhnw.acrm.business.service.AgentService;
 import ch.fhnw.acrm.data.domain.Customer;
+import ch.fhnw.acrm.products.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ public class OrdersService {
     public OrdersService(OrdersRepository ordersRepository){
         this.ordersRepository = ordersRepository;
     }
+
 
 
 
@@ -52,6 +54,7 @@ public class OrdersService {
     public List<Orders> getOrders(){
         return ordersRepository.findAll();
     }
+
 
     public void addNewOrder(Orders orders){
         ordersRepository.save(orders);

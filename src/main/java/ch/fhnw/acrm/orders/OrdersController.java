@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(path = "/orders")
@@ -24,27 +25,71 @@ public class OrdersController {
     }
 
 
-    @GetMapping
-    public String getOrdersView(Model model) {
-        model.addAttribute("currentorders", ordersRepository.findById(1L).get());
 
-        return "user/bootstraptest";
+
+
+    @GetMapping({"/list"})
+    public ModelAndView getAllOrders() {
+        ModelAndView mav = new ModelAndView("orders/list-orders-page");
+        mav.addObject("orders", ordersRepository.findAll());
+        return mav;
     }
 
-    @GetMapping(path = "costs")
-    public String getOrdersCosts(Model model) throws Exception {
+    @GetMapping("/addOrdersView")
+    public ModelAndView addOrdersForm() {
+        ModelAndView mav = new ModelAndView("orders/save-orders-page");
+        Orders newOrder = new Orders();
+        mav.addObject("orders", newOrder);
+        return mav;
+    }
 
-        long a = DistanceAPI.getData("Florastrasse40,4057Basel");
-        String str = Long.toString(a);
-        model.addAttribute("costs", str);
-        return "costs";
+    @PostMapping("/saveOrders")
+    public String saveOrders(@ModelAttribute Orders orders) {
+        ordersRepository.save(orders);
+        return "orders_info";
     }
 
 
-    @PostMapping(path = "/new")
-    public void createNewOrder(@RequestBody Orders order){
-        this.ordersService.addNewOrder(order);
+    @GetMapping("/showUpdateForm")
+    public ModelAndView showUpdateForm(@RequestParam Long id) {
+        ModelAndView mav = new ModelAndView("orders/save-orders-page");
+        Orders orders = ordersRepository.findById(id).get();
+        mav.addObject("orders", orders);
+        return mav;
     }
+
+    @GetMapping("/deleteOrders")
+    public String deleteOrders(@RequestParam Long id) {
+        ordersRepository.deleteById(id);
+        return "redirect:/list";
+    }
+
+
+
+//    @GetMapping
+//    public String getOrdersView(Model model) {
+//        model.addAttribute("currentorders", ordersRepository.findById(1L).get());
+//
+//        return "user/bootstraptest";
+//    }
+//
+//    @GetMapping(path = "costs")
+//    public String getOrdersCosts(Model model) throws Exception {
+//
+//        long a = DistanceAPI.getData("Florastrasse40,4057Basel");
+//        String str = Long.toString(a);
+//        model.addAttribute("costs", str);
+//        return "costs";
+//    }
+//
+//
+//    @PostMapping(path = "/new")
+//    public void createNewOrder(@RequestBody Orders order){
+//        this.ordersService.addNewOrder(order);
+//    }
+
+
+    // List Orders
 
 
 
