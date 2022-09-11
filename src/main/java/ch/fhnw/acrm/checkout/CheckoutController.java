@@ -48,12 +48,19 @@ public class CheckoutController {
         }
         System.out.println("Distance = "  +distance+ " Palletsize =" +sumOfPallets);
         double num = distance;
-        System.out.println(num);
-        num = Math.round(num / 3000);
-        System.out.println(num);
-        double numtest = 89001.43;
-        numtest = Math.round(num / 3000);
-        System.out.println();
+        System.out.println("This is distance input " + num);
+        num = Math.round(num / 30000);
+        System.out.println("This is num " + num);
+
+        if(num <= 1: num = 1)
+
+
+//        double numtesti = 89001.43;
+//        numtesti = Math.round(numtesti / 30000);
+//        System.out.println("This is numtest " + numtesti);
+//        double far = 120001.43;
+//        far = Math.round(far / 30000);
+//        System.out.println("This is numtest " + far);
         mav.addObject("orders", agentOrders);
 //        for (Orders orders: agentOrders){
 //            System.out.println(orders.toString());
