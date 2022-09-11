@@ -47,7 +47,9 @@ public class CheckoutController {
            sumOfPallets += order.getProducts().getPalletSize() * order.getProduct_quantity();
         }
         System.out.println("Distance = "  +distance+ " Palletsize =" +sumOfPallets);
-
+        double num = distance;
+        num = Math.round(num * 1000) / 30000;
+        System.out.println(num);
         mav.addObject("orders", agentOrders);
 //        for (Orders orders: agentOrders){
 //            System.out.println(orders.toString());
