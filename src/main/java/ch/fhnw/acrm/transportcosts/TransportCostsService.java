@@ -9,10 +9,11 @@ import java.util.List;
 @Service
 public class TransportCostsService {
 
+    @Autowired
     private final TransportCostsRepository transportCostsRepository;
 
 
-    @Autowired
+
     public TransportCostsService(TransportCostsRepository transportCostsRepository) {
         this.transportCostsRepository = transportCostsRepository;
 

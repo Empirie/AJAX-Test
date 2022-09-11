@@ -129,36 +129,7 @@ public class CheckoutController {
 //        }
 
 
-        switch ((int) sumOfPallets) {
-            case 1:  fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
-                break;
-            case 2:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 3:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 4:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 5:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 6:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 7:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 8:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 9:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 10: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 11: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 12: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            default: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
 
-
-    }
 
         System.out.println(fprice);
         //Get final cost...finally end in sight
