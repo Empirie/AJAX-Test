@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -21,7 +22,7 @@
     <h3>List Products</h3>
 
     <hr/>
-    <a th:href="@{/list-products-page}" th:object="${products}" methods="" class="btn btn-primary">Add Products</a>
+    <a th:href="@{/list-products-page}" th:object="${products}" methods="GET" class="btn btn-primary">Add Products</a>
     <br/><br/>
 
 <!--    Thymeleaf requires you to specify the command object by using a th:object attribute in your <form> tag:-->

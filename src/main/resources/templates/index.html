@@ -1,133 +1,33 @@
-<!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" lang="">
-<!--thymeleaf implementation still needs to be done-->
+<!DOCTYPE html>
+<html>
+
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>FoundOne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>A-CRM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.0/dist/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
-
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a
-            href="#"
-            class="navbar-brand mb-0 h1">
-        <img
-                class="d-inline-block align-top"
-                src="https://www.fhnw.ch/en/degree-programmes/business/bsc-in-business-information-technology/@@fhnw.tiles.wi_060_infobox/4ec4ee552e9d4847aa6a80aaf7d6f38e/@@images/1902dd91-a74c-43f9-b679-e3269bcf19a5.jpeg"
-                width="30" height="30"  alt="Bachelor in Business Information Technology image"/>
-        Navbar
-    </a>
-
-    <button
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            class="navbar-toggler"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-    >
-
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-            class="collapse navbar-collapse"
-            id="navbarNav">
-        <ul class="navbar-nav">
-
-            <!--            Home Button                             -->
-            <li class="nav-item active">
-                <a href="#" class="nav-link active">
-                    Home
-                </a>
-            </li>
-
-
-            <!--            Products Button                          -->
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link
-                        dropdown-toggle"
-                   id="navbarDropdown"
-                   role="button"
-                   data-bs-toggle="dropdown"
-                   aria-expanded="false"
-                >
-                    Products
-                </a>
-                <ul class="dropdown-menu"
-                    aria-labelledby="navbarDropdown">
-                    <li><a href= "testtl.html"
-                           class="dropdown-item">Feature #1</a></li>
-                    <li><a href="offregister.html"
-                           class="dropdown-item">Feature #2</a></li>
-                    <li><a href="offlogin.html"
-                           class="dropdown-item">Feature #3</a></li>
-                </ul>
-            </li>
-
-            <!--            Orders Button                          -->
-            <li class="nav-item active">
-                <a href="#" class="nav-link active">
-                    Orders
-                </a>
-            </li>
-
-            <!--            Distance Button                          -->
-            <li class="nav-item active">
-                <a href="#" class="nav-link active">
-                    Distance
-                </a>
-            </li>
-
-            <!--            Distance Button                          -->
-            <li class="nav-item active">
-                <a href="#" class="nav-link active">
-                    Settings
-                </a>
-            </li>
-
-
-        </ul>
-
-
-    </div>
-
-</nav>
-<!--must be updated-->
-<td th:text="${testtl1}">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/webapp.js"></script>
+    <script>
+        validateLogin(function (result) {
+            if (result) {
+                window.location.replace("/homepage");
+            } else {
+                window.location.replace("/login");
+            }
+        });
+    </script>
 </body>
+
 </html>

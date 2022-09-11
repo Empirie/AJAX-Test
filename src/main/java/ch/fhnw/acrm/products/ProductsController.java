@@ -136,4 +136,8 @@ public class ProductsController {
         productsRepository.deleteById(id);
         return "redirect:/list";
     }
+
+
+
+
 }
