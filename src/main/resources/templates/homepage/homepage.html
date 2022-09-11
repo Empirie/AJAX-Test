@@ -1,15 +1,34 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf - Bootstrap WebJars</title>
 
-    <title>The easy part</title>
-    <link rel="stylesheet" th:href="@{/main.css}"  />
-<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.0/dist/flatly/bootstrap.min.css">-->
 
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
-
 <body>
-<h1>Welcome to my shop</h1>
+<h1>Hello</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary active" aria-current="page">Homepage</a>
+                <a href="#" th:href="@{/list-products-page}" class="btn btn-primary">Products</a>
+                <a href="#" class="btn btn-primary">Link</a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+
 </body>
 </html>

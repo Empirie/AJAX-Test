@@ -7,7 +7,6 @@ package ch.fhnw.acrm.products;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -103,7 +102,7 @@ public class ProductsController {
 
     @GetMapping({"/product_list"})
     public ModelAndView listAllProducts() {
-        ModelAndView mav = new ModelAndView("products/list-products-page");
+        ModelAndView mav = new ModelAndView("list-products-pageold");
         mav.addObject("products", productsRepository.findAll());
         return mav;
     }

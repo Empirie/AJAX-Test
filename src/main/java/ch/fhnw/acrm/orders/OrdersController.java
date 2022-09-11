@@ -2,6 +2,7 @@ package ch.fhnw.acrm.orders;
 
 
 import ch.fhnw.acrm.distancecalc.DistanceAPI;
+import ch.fhnw.acrm.products.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -64,7 +65,14 @@ public class OrdersController {
         return "redirect:/list";
     }
 
-
+    //Product order page
+    @GetMapping("/orderslist")
+    public ModelAndView seeOrders() {
+        ModelAndView mav = new ModelAndView("orders/list-orders-page");
+        Orders orders = new Orders();
+        mav.addObject("order", seeOrders());
+        return mav;
+    }
 
 //    @GetMapping
 //    public String getOrdersView(Model model) {

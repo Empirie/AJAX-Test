@@ -24,7 +24,7 @@ public class TransportCostsController {
 
     @GetMapping({"/product_list"})
     public ModelAndView listAllProducts() {
-        ModelAndView mav = new ModelAndView("products/list-products-page");
+        ModelAndView mav = new ModelAndView("list-products-pageold");
         mav.addObject("products", productsRepository.findAll());
         return mav;
     }
