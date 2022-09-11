@@ -102,16 +102,19 @@ public class DeliveryData {
         this.agent = agent;
     }
 
+
+
     @Override
     public String toString() {
-        return "DeliveryData{" +
-                "id=" + id +
-                ", streetname='" + streetname + '\'' +
-                ", streetnumber=" + streetnumber +
-                ", pobox=" + pobox +
-                ", cityname='" + cityname + '\'' +
-                ", agent=" + agent +
-                '}';
+        return streetname+streetnumber+","+pobox+cityname;
+//        return "DeliveryData{" +
+//                "id=" + id +
+//                ", streetname='" + streetname + '\'' +
+//                ", streetnumber=" + streetnumber +
+//                ", pobox=" + pobox +
+//                ", cityname='" + cityname + '\'' +
+//                ", agent=" + agent +
+//                '}';
     }
 
 

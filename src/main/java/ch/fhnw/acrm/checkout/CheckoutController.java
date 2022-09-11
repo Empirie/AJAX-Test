@@ -1,6 +1,7 @@
 package ch.fhnw.acrm.checkout;
 
 import ch.fhnw.acrm.deliverydata.DeliveryService;
+import ch.fhnw.acrm.distancecalc.DistanceAPI;
 import ch.fhnw.acrm.orders.Orders;
 import ch.fhnw.acrm.orders.OrdersService;
 import org.springframework.stereotype.Controller;
@@ -23,10 +24,13 @@ public class CheckoutController {
         this.ordersService = ordersService;
         this.deliveryService = deliveryService;
     }
-
+//
+// x =   {
+//        "3500" : [{"palletSize" : "4" , "cost" : "1000"},{"palletsize" : "7", "cost" : "2000"}]
+//    }
 
     @GetMapping(path = "/checkout")
-    public ModelAndView showCheckout() {
+    public ModelAndView showCheckout() throws Exception {
 
         ModelAndView mav = new ModelAndView("orders/list-orders-page");
 
@@ -36,6 +40,14 @@ public class CheckoutController {
 //        for (Orders orders: agentOrders){
 //
 //        }
+        Long distance = DistanceAPI.getData(x);
+        double sumOfPallets = 0.0;
+
+        for (Orders order: agentOrders){
+           sumOfPallets += order.getProducts().getPalletSize() * order.getProduct_quantity();
+        }
+        System.out.println("Distance = "  +distance+ " Palletsize =" +sumOfPallets);
+
         mav.addObject("orders", agentOrders);
 //        for (Orders orders: agentOrders){
 //            System.out.println(orders.toString());

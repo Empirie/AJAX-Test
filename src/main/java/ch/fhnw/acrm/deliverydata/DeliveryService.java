@@ -1,6 +1,7 @@
 package ch.fhnw.acrm.deliverydata;
 
 
+import ch.fhnw.acrm.data.domain.Agent;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,9 +28,18 @@ public class DeliveryService {
 
 
     public String getGodString(){
-        Long agent_id = agentService.getCurrentAgent().getId();
-        System.out.println(agent_id);
-        DeliveryData deliveryData = deliveryRepository.getById(agent_id);
+        Agent agent = agentService.getCurrentAgent();
+
+        List<DeliveryData> allDeliveryData = deliveryRepository.findAll();
+
+        DeliveryData deliveryData = new DeliveryData();
+        for (DeliveryData dd : allDeliveryData){
+         if(  dd.getAgent().getId() == agent.getId()){
+             deliveryData = dd;
+         }
+        }
+//        System.out.println(deliveryData.toString());
+//
 
 //        int nr = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getStreetnumber();
 //

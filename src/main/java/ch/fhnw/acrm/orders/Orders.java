@@ -24,6 +24,10 @@ public class Orders {
     )
     private Long id;
 
+    public int getProduct_quantity() {
+        return product_quantity;
+    }
+
     private int product_quantity;
 
 
