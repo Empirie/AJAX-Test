@@ -1,5 +1,6 @@
 package ch.fhnw.acrm.checkout;
 
+import ch.fhnw.acrm.deliverydata.DeliveryService;
 import ch.fhnw.acrm.orders.Orders;
 import ch.fhnw.acrm.orders.OrdersService;
 import org.springframework.stereotype.Controller;
@@ -15,11 +16,12 @@ import java.util.List;
 public class CheckoutController {
 
     private final OrdersService ordersService;
+    private final DeliveryService deliveryService;
 
 
-
-    public CheckoutController(OrdersService ordersService) {
+    public CheckoutController(OrdersService ordersService, DeliveryService deliveryService) {
         this.ordersService = ordersService;
+        this.deliveryService = deliveryService;
     }
 
 
@@ -29,10 +31,15 @@ public class CheckoutController {
         ModelAndView mav = new ModelAndView("orders/list-orders-page");
 
         List<Orders> agentOrders = ordersService.getOrders();
+        String x = deliveryService.getGodString();
+        System.out.println(x);
+//        for (Orders orders: agentOrders){
+//
+//        }
         mav.addObject("orders", agentOrders);
-        for (Orders orders: agentOrders){
-            System.out.println(orders.toString());
-        }
+//        for (Orders orders: agentOrders){
+//            System.out.println(orders.toString());
+//        }
 
 //        toString(ordersService.getOrders())
         return mav;

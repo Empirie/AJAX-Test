@@ -27,15 +27,17 @@ public class DeliveryService {
 
 
     public String getGodString(){
+        Long agent_id = agentService.getCurrentAgent().getId();
+        System.out.println(agent_id);
+        DeliveryData deliveryData = deliveryRepository.getById(agent_id);
 
-        String street = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getStreetname();
-        int nr = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getStreetnumber();
-
-        int po = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getPobox();
-        String city = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getCityname();
-        String godstring = street + nr + po + city;
-        System.out.println(godstring);
-        return godstring;
+//        int nr = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getStreetnumber();
+//
+//        int po = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getPobox();
+//        String city = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getCityname();
+//        String godstring = street + nr + po + city;
+//        System.out.println(godstring);
+        return deliveryData.toString();
     }
 
     public void addNewDeliveryData(DeliveryData deliveryData){

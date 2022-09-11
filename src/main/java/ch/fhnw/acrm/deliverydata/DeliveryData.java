@@ -47,6 +47,7 @@ public class DeliveryData {
         this.streetnumber = streetnumber;
         this.pobox = pobox;
         this.cityname = cityname;
+
     }
 
     public DeliveryData(String streetname, int streetnumber, int pobox, String cityname) {
@@ -97,6 +98,9 @@ public class DeliveryData {
         return agent;
     }
 
+    public void setAgent(Agent agent) {
+        this.agent = agent;
+    }
 
     @Override
     public String toString() {

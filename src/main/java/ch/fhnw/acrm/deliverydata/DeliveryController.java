@@ -79,7 +79,7 @@ public class DeliveryController {
 
     @PostMapping("/saveDelivery")
     public String saveDelivery(@ModelAttribute DeliveryData delivery) {
-
+        delivery.setAgent(agentService.getCurrentAgent());
         deliveryRepository.save(delivery);
         return "delivery/delivery_info";
     }
