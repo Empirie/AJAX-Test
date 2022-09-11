@@ -43,7 +43,10 @@ public class CheckoutController {
 //        for (Orders orders: agentOrders){
 //
 //        }
-        Long distance = DistanceAPI.getData(x);
+
+
+        //Check!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        long distance = DistanceAPI.getData(x);
         double sumOfPallets = 0.0;
 
         for (Orders order: agentOrders){
@@ -65,55 +68,55 @@ public class CheckoutController {
 
         //extract palletPriceattribute # from double
         //I can't think of an elegant solution
-        int choice = (int)sumOfPallets;
-        double fprice;
+//        boolean choice = (int)sumOfPallets;
+        double fprice = 0.0;
 
-        for (choice=1;;){
+        if (sumOfPallets==1){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
             System.out.println(fprice);
         }
 
-        for (choice=2;;){
+        else if (sumOfPallets==2){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
             System.out.println(fprice);
         }
-        for (choice=3;;){
+        else if (sumOfPallets==3){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice3();
             System.out.println(fprice);
         }
-        for (choice=4;;){
+        else if (sumOfPallets==4){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice4();
             System.out.println(fprice);
         }
-        for (choice=5;;){
+        else if (sumOfPallets==5){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice5();
             System.out.println(fprice);
         }
-        for (choice=6;;){
+        else if (sumOfPallets==6){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice6();
             System.out.println(fprice);
         }
-        for (choice=7;;){
+        else if (sumOfPallets==7){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice7();
             System.out.println(fprice);
         }
-        for (choice=8;;){
+        else if (sumOfPallets==8){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice8();
             System.out.println(fprice);
         }
-        for (choice=9;;){
+        else if (sumOfPallets==9){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice9();
             System.out.println(fprice);
         }
-        for (choice=10;;){
+        else if (sumOfPallets==10){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice10();
             System.out.println(fprice);
         }
-        for (choice=11;;){
+        else if (sumOfPallets==11){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice11();
             System.out.println(fprice);
         }
-        for (choice=12;;){
+        else if (sumOfPallets==12){
             fprice = transportCostsRepository.getById((long)num).getPalletPrice12();
             System.out.println(fprice);
         }
