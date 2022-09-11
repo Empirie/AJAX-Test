@@ -24,6 +24,7 @@ public class ProductsService {
         return productsRepository.findAll();
     }
 
+
     public void addNewProduct(Products product){
         productsRepository.save(product);
     }

@@ -26,6 +26,10 @@ public class TransportCosts {
     private double palletPrice11;
     private double palletPrice12;
 
+    public TransportCosts() {
+
+    }
+
     public TransportCosts(Long idDistanceIn30kmRounded, double palletPrice1, double palletPrice2, double palletPrice3, double palletPrice4, double palletPrice5, double palletPrice6, double palletPrice7, double palletPrice8, double palletPrice9, double palletPrice10, double palletPrice11, double palletPrice12) {
         this.idDistanceIn30kmRounded = idDistanceIn30kmRounded;
         this.palletPrice1 = palletPrice1;
@@ -42,108 +46,105 @@ public class TransportCosts {
         this.palletPrice12 = palletPrice12;
     }
 
-    public TransportCosts() {
-
-    }
 
     public Long getIdDistanceIn30kmRounded() {
         return idDistanceIn30kmRounded;
-    }
-
-    public double getPalletPrice1() {
-        return palletPrice1;
-    }
-
-    public double getPalletPrice2() {
-        return palletPrice2;
-    }
-
-    public double getPalletPrice3() {
-        return palletPrice3;
-    }
-
-    public double getPalletPrice4() {
-        return palletPrice4;
-    }
-
-    public double getPalletPrice5() {
-        return palletPrice5;
-    }
-
-    public double getPalletPrice6() {
-        return palletPrice6;
-    }
-
-    public double getPalletPrice7() {
-        return palletPrice7;
-    }
-
-    public double getPalletPrice8() {
-        return palletPrice8;
-    }
-
-    public double getPalletPrice9() {
-        return palletPrice9;
-    }
-
-    public double getPalletPrice10() {
-        return palletPrice10;
-    }
-
-    public double getPalletPrice11() {
-        return palletPrice11;
-    }
-
-    public double getPalletPrice12() {
-        return palletPrice12;
     }
 
     public void setIdDistanceIn30kmRounded(Long idDistanceIn30kmRounded) {
         this.idDistanceIn30kmRounded = idDistanceIn30kmRounded;
     }
 
+    public double getPalletPrice1() {
+        return palletPrice1;
+    }
+
     public void setPalletPrice1(double palletPrice1) {
         this.palletPrice1 = palletPrice1;
+    }
+
+    public double getPalletPrice2() {
+        return palletPrice2;
     }
 
     public void setPalletPrice2(double palletPrice2) {
         this.palletPrice2 = palletPrice2;
     }
 
+    public double getPalletPrice3() {
+        return palletPrice3;
+    }
+
     public void setPalletPrice3(double palletPrice3) {
         this.palletPrice3 = palletPrice3;
+    }
+
+    public double getPalletPrice4() {
+        return palletPrice4;
     }
 
     public void setPalletPrice4(double palletPrice4) {
         this.palletPrice4 = palletPrice4;
     }
 
+    public double getPalletPrice5() {
+        return palletPrice5;
+    }
+
     public void setPalletPrice5(double palletPrice5) {
         this.palletPrice5 = palletPrice5;
+    }
+
+    public double getPalletPrice6() {
+        return palletPrice6;
     }
 
     public void setPalletPrice6(double palletPrice6) {
         this.palletPrice6 = palletPrice6;
     }
 
+    public double getPalletPrice7() {
+        return palletPrice7;
+    }
+
     public void setPalletPrice7(double palletPrice7) {
         this.palletPrice7 = palletPrice7;
+    }
+
+    public double getPalletPrice8() {
+        return palletPrice8;
     }
 
     public void setPalletPrice8(double palletPrice8) {
         this.palletPrice8 = palletPrice8;
     }
 
+    public double getPalletPrice9() {
+        return palletPrice9;
+    }
+
     public void setPalletPrice9(double palletPrice9) {
         this.palletPrice9 = palletPrice9;
+    }
+
+    public double getPalletPrice10() {
+        return palletPrice10;
     }
 
     public void setPalletPrice10(double palletPrice10) {
         this.palletPrice10 = palletPrice10;
     }
 
+    public double getPalletPrice11() {
+        return palletPrice11;
+    }
+
     public void setPalletPrice11(double palletPrice11) {
         this.palletPrice11 = palletPrice11;
+    }
+
+    public double getPalletPrice12() {
+        return palletPrice12;
     }
 
     public void setPalletPrice12(double palletPrice12) {
