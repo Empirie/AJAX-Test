@@ -22,12 +22,12 @@ public class UserController {
 
     @GetMapping("/login")
     public String getLoginView() {
-        return "offlogin";
+        return "user/login";
     }
 
     @GetMapping("/register")
     public String getRegisterView() {
-        return "offregister";
+        return "user/register";
     }
 
     @PostMapping("/user/register")
@@ -42,7 +42,7 @@ public class UserController {
 
     @GetMapping("/profile/edit")
     public String getProfileView() {
-        return "offprofile";
+        return "user/profile";
     }
 
     @GetMapping("/profile")
