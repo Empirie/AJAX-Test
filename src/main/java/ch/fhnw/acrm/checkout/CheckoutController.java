@@ -75,9 +75,7 @@ public class CheckoutController {
         //extract palletPriceattribute # from double
         //I can't think of an elegant solution
 //        boolean choice = (int)sumOfPallets;
-        double fprice = 0.0;
-
-
+        double fprice;
 
 
 
@@ -135,7 +133,7 @@ public class CheckoutController {
 
 
 
-        System.out.println(fprice);
+//        System.out.println(fprice);
         //Get final cost...finally end in sight
 
 
