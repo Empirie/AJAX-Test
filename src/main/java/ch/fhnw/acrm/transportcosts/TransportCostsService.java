@@ -12,16 +12,18 @@ public class TransportCostsService {
     @Autowired
     private final TransportCostsRepository transportCostsRepository;
 
-
-
+    @Autowired
     public TransportCostsService(TransportCostsRepository transportCostsRepository) {
         this.transportCostsRepository = transportCostsRepository;
-
     }
+
 
     public List<TransportCosts> getTransportCosts(){
         return transportCostsRepository.findAll();
     }
+
+//    List<TransportCosts> allTransportData = transportCostsRepository.findAll();
+
 
 //    public void addNewTransportCostListToDB(TransportCosts transportCosts){
 //        transportCostsRepository.save(transportCosts);

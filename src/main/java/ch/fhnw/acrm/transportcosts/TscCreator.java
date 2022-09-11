@@ -66,10 +66,10 @@ public class TscCreator implements CommandLineRunner {
         401.25,
         426.50,
         450.35);
-
+        transportCostsRepository.save(transportCosts5);
 
         TransportCosts transportCosts6 = new TransportCosts(6L,100.55, 149.20, 196.15, 235.15, 275.60, 311.25, 345.35, 377.75, 408.60, 437.75, 465.35, 491.25);
-
+        transportCostsRepository.save(transportCosts6);
 
         TransportCosts transportCosts7 = new TransportCosts(7L,108.95,
         161.55,
@@ -83,7 +83,7 @@ public class TscCreator implements CommandLineRunner {
         474.25,
         504.05,
         532.15);
-
+        transportCostsRepository.save(transportCosts7);
 
 
 

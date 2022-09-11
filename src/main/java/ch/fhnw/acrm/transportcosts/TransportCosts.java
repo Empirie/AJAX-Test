@@ -165,6 +165,60 @@ public class TransportCosts {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TransportCosts)) return false;
+
+        TransportCosts that = (TransportCosts) o;
+
+        if (Double.compare(that.getPalletPrice1(), getPalletPrice1()) != 0) return false;
+        if (Double.compare(that.getPalletPrice2(), getPalletPrice2()) != 0) return false;
+        if (Double.compare(that.getPalletPrice3(), getPalletPrice3()) != 0) return false;
+        if (Double.compare(that.getPalletPrice4(), getPalletPrice4()) != 0) return false;
+        if (Double.compare(that.getPalletPrice5(), getPalletPrice5()) != 0) return false;
+        if (Double.compare(that.getPalletPrice6(), getPalletPrice6()) != 0) return false;
+        if (Double.compare(that.getPalletPrice7(), getPalletPrice7()) != 0) return false;
+        if (Double.compare(that.getPalletPrice8(), getPalletPrice8()) != 0) return false;
+        if (Double.compare(that.getPalletPrice9(), getPalletPrice9()) != 0) return false;
+        if (Double.compare(that.getPalletPrice10(), getPalletPrice10()) != 0) return false;
+        if (Double.compare(that.getPalletPrice11(), getPalletPrice11()) != 0) return false;
+        if (Double.compare(that.getPalletPrice12(), getPalletPrice12()) != 0) return false;
+        return getIdDistanceIn30kmRounded().equals(that.getIdDistanceIn30kmRounded());
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = getIdDistanceIn30kmRounded().hashCode();
+        temp = Double.doubleToLongBits(getPalletPrice1());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice2());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice3());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice4());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice5());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice6());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice7());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice8());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice9());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice10());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice11());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getPalletPrice12());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "TransportCosts{" +
                 "idDistanceIn30kmRounded=" + idDistanceIn30kmRounded +

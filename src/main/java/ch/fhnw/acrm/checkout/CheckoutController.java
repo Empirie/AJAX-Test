@@ -77,16 +77,18 @@ public class CheckoutController {
 //        boolean choice = (int)sumOfPallets;
         double fprice;
 
+        sumOfPallets = 1;
 
 
 
         if (sumOfPallets==1){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+//            Long myObj = new Long(val);
+            fprice = transportCostsService.getTransportCosts().get((int) num).getPalletPrice1();
             System.out.println(fprice);
         }
 
         else if (sumOfPallets==2){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+            fprice = transportCostsService.getTransportCosts().get((int) num).getPalletPrice1();
             System.out.println(fprice);
         }
         else if (sumOfPallets==3){
@@ -97,18 +99,22 @@ public class CheckoutController {
             fprice = transportCostsRepository.getById((long)num).getPalletPrice4();
             System.out.println(fprice);
         }
-//        else if (sumOfPallets==5){
-//            fprice = transportCostsRepository.getById((long)num).getPalletPrice5();
-//            System.out.println(fprice);
-//        }
-//        else if (sumOfPallets==6){
-//            fprice = transportCostsRepository.getById((long)num).getPalletPrice6();
-//            System.out.println(fprice);
-//        }
-//        else if (sumOfPallets==7){
-//            fprice = transportCostsRepository.getById((long)num).getPalletPrice7();
-//            System.out.println(fprice);
-//        }
+        else if (sumOfPallets==5){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice5();
+            System.out.println(fprice);
+        }
+        else if (sumOfPallets==6){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice6();
+            System.out.println(fprice);
+        }
+        else if (sumOfPallets==7){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice7();
+            System.out.println(fprice);
+        }
+
+
+
+
 //        else if (sumOfPallets==8){
 //            fprice = transportCostsRepository.getById((long)num).getPalletPrice8();
 //            System.out.println(fprice);

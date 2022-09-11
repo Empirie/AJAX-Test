@@ -1,65 +1,62 @@
 package ch.fhnw.acrm.transportcosts;
 
 
-import ch.fhnw.acrm.orders.Orders;
+import ch.fhnw.acrm.products.Products;
+import ch.fhnw.acrm.products.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-@RequestMapping
+@RestController
+@RequestMapping(path = "/transport")
 public class TransportCostsController {
 
     @Autowired
     public final TransportCostsRepository transportCostsRepository;
+    public final ProductsRepository productsRepository;
 
-    public TransportCostsController(TransportCostsRepository transportCostsRepository) {
+    public TransportCostsController(TransportCostsRepository transportCostsRepository, ProductsRepository productsRepository) {
         this.transportCostsRepository = transportCostsRepository;
+        this.productsRepository = productsRepository;
     }
 
 
 
-//    for (
-//    Orders order: agentOrders){
-//        sumOfPallets += order.getProducts().getPalletSize() * order.getProduct_quantity();
-//    }
+    @GetMapping({"/product_list"})
+    public ModelAndView listAllProducts() {
+        ModelAndView mav = new ModelAndView("products/list-products-page");
+        mav.addObject("products", productsRepository.findAll());
+        return mav;
+    }
+
+    @GetMapping("/products")
+    public ModelAndView addProductsForm() {
+        ModelAndView mav = new ModelAndView("products/save-products-page");
+        Products newProduct = new Products();
+        mav.addObject("product", newProduct);
+        return mav;
+    }
+
+    @PostMapping("/saveProduct")
+    public String saveTC(@ModelAttribute TransportCosts transport) {
+        transportCostsRepository.save(transport);
+        return "product_info";
+    }
 
 
+    @GetMapping("/showUpdateForm")
+    public ModelAndView showUpdateForm(@RequestParam Long id) {
+        ModelAndView mav = new ModelAndView("products/save-products-page");
+        Products product = productsRepository.findById(id).get();
+        mav.addObject("product", product);
+        return mav;
+    }
 
-//    public double getFinal(){
-//
-//        switch ((int) sumOfPallets) {
-//            case 1:
-//                double fprice = transportCostsRepository.getById((long) num).getPalletPrice1();
-//                break;
-//            case 2:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 3:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 4:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 5:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 6:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 7:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 8:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 9:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 10: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 11: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            case 12: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//            default: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-//                break;
-//
-//
-//        }
-
+    @GetMapping("/deleteProducts")
+    public String deleteProduct(@RequestParam Long id) {
+        productsRepository.deleteById(id);
+        return "redirect:/list";
+    }
 
 
 

@@ -1,5 +1,8 @@
 package ch.fhnw.acrm.checkout;
 
+import javax.persistence.Entity;
+
+
 public class Checkout {
 //
 //    @Override
