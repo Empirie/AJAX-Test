@@ -4,6 +4,7 @@ import ch.fhnw.acrm.deliverydata.DeliveryService;
 import ch.fhnw.acrm.distancecalc.DistanceAPI;
 import ch.fhnw.acrm.orders.Orders;
 import ch.fhnw.acrm.orders.OrdersService;
+import ch.fhnw.acrm.transportcosts.TransportCostsRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +19,13 @@ public class CheckoutController {
 
     private final OrdersService ordersService;
     private final DeliveryService deliveryService;
+    private final TransportCostsRepository transportCostsRepository;
 
 
-    public CheckoutController(OrdersService ordersService, DeliveryService deliveryService) {
+    public CheckoutController(OrdersService ordersService, DeliveryService deliveryService, TransportCostsRepository transportCostsRepository) {
         this.ordersService = ordersService;
         this.deliveryService = deliveryService;
+        this.transportCostsRepository = transportCostsRepository;
     }
 //
 // x =   {
@@ -58,6 +61,65 @@ public class CheckoutController {
             num = 1;
         }
         System.out.println("Num = 1 correction " + num);
+
+
+        //extract palletPriceattribute # from double
+        //I can't think of an elegant solution
+        double fprice;
+
+        for (sumOfPallets=1;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+
+        for (sumOfPallets=2;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=3;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=4;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=5;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=6;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=7;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=8;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=9;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=10;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=11;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        for (sumOfPallets=12;;){
+            fprice = transportCostsRepository.getById((long)num).getPalletPrice1();
+            System.out.println(fprice);
+        }
+        //Get final cost...finally end in sight
+
+
+
 
 
 //        double numtesti = 89001.43;
