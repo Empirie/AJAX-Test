@@ -3,13 +3,23 @@ package ch.fhnw.acrm.transportcosts;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "transport")
 public class TransportCosts {
 
 
     //id corresponds to converted distance calulation for ease of use
 
     @Id
+    @SequenceGenerator(
+            name = "cost_sequence",
+            sequenceName = "cost_sequence",
+            allocationSize = 1
+    )
+
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "cost_sequence"
+    )
     private Long idDistanceIn30kmRounded;
     private double palletPrice1;
     private double palletPrice2;
