@@ -47,12 +47,17 @@ public class CheckoutController {
            sumOfPallets += order.getProducts().getPalletSize() * order.getProduct_quantity();
         }
         System.out.println("Distance = "  +distance+ " Palletsize =" +sumOfPallets);
+        sumOfPallets = Math.ceil(sumOfPallets);
+        System.out.println("Palletsizer ounded up " + sumOfPallets);
         double num = distance;
         System.out.println("This is distance input " + num);
         num = Math.round(num / 30000);
         System.out.println("This is num " + num);
 
-        if(num <= 1: num = 1)
+        if(num <= 1){
+            num = 1;
+        }
+        System.out.println("Num = 1 correction " + num);
 
 
 //        double numtesti = 89001.43;
