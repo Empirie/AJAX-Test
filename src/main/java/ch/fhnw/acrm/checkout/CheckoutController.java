@@ -75,7 +75,11 @@ public class CheckoutController {
         //extract palletPriceattribute # from double
         //I can't think of an elegant solution
 //        boolean choice = (int)sumOfPallets;
-        double fprice;
+        double fprice = 0.0;
+
+
+
+
 
 
         if (sumOfPallets==1){
@@ -95,43 +99,43 @@ public class CheckoutController {
             fprice = transportCostsRepository.getById((long)num).getPalletPrice4();
             System.out.println(fprice);
         }
-        else if (sumOfPallets==5){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice5();
-            System.out.println(fprice);
-        }
-        else if (sumOfPallets==6){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice6();
-            System.out.println(fprice);
-        }
-        else if (sumOfPallets==7){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice7();
-            System.out.println(fprice);
-        }
-        else if (sumOfPallets==8){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice8();
-            System.out.println(fprice);
-        }
-        else if (sumOfPallets==9){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice9();
-            System.out.println(fprice);
-        }
-        else if (sumOfPallets==10){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice10();
-            System.out.println(fprice);
-        }
-        else if (sumOfPallets==11){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice11();
-            System.out.println(fprice);
-        }
-        else if (sumOfPallets==12){
-            fprice = transportCostsRepository.getById((long)num).getPalletPrice12();
-            System.out.println(fprice);
-        }
+//        else if (sumOfPallets==5){
+//            fprice = transportCostsRepository.getById((long)num).getPalletPrice5();
+//            System.out.println(fprice);
+//        }
+//        else if (sumOfPallets==6){
+//            fprice = transportCostsRepository.getById((long)num).getPalletPrice6();
+//            System.out.println(fprice);
+//        }
+//        else if (sumOfPallets==7){
+//            fprice = transportCostsRepository.getById((long)num).getPalletPrice7();
+//            System.out.println(fprice);
+//        }
+//        else if (sumOfPallets==8){
+//            fprice = transportCostsRepository.getById((long)num).getPalletPrice8();
+//            System.out.println(fprice);
+//        }
+//        else if (sumOfPallets==9){
+//            fprice = transportCostsRepository.getById((long)num).getPalletPrice9();
+//            System.out.println(fprice);
+//        }
+//        else if (sumOfPallets==10){
+//            fprice = transportCostsRepository.getById((long)num).getPalletPrice10();
+//            System.out.println(fprice);
+//        }
+//        else if (sumOfPallets==11){
+//            fprice = transportCostsRepository.getById((long)num).getPalletPrice11();
+//            System.out.println(fprice);
+//        }
+//        else if (sumOfPallets==12){
+//            fprice = transportCostsRepository.getById((long)num).getPalletPrice12();
+//            System.out.println(fprice);
+//        }
 
 
 
 
-//        System.out.println(fprice);
+        System.out.println(fprice);
         //Get final cost...finally end in sight
 
 

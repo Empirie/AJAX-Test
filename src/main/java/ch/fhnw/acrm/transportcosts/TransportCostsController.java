@@ -2,6 +2,7 @@ package ch.fhnw.acrm.transportcosts;
 
 
 import ch.fhnw.acrm.orders.Orders;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping
 public class TransportCostsController {
 
+    @Autowired
     public final TransportCostsRepository transportCostsRepository;
 
     public TransportCostsController(TransportCostsRepository transportCostsRepository) {
@@ -59,7 +61,7 @@ public class TransportCostsController {
 //        }
 
 
-    
+
 
 
 }

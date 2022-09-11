@@ -1,9 +1,6 @@
 package ch.fhnw.acrm.transportcosts;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
@@ -13,6 +10,16 @@ public class TransportCosts {
     //id corresponds to converted distance calulation for ease of use
 
     @Id
+    @SequenceGenerator(
+            name = "product_sequence",
+            sequenceName = "product_sequence",
+            allocationSize = 1
+    )
+
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "product_sequence"
+    )
     private Long idDistanceIn30kmRounded;
     private double palletPrice1;
     private double palletPrice2;
@@ -29,6 +36,21 @@ public class TransportCosts {
 
     public TransportCosts() {
 
+    }
+
+    public TransportCosts(double palletPrice1, double palletPrice2, double palletPrice3, double palletPrice4, double palletPrice5, double palletPrice6, double palletPrice7, double palletPrice8, double palletPrice9, double palletPrice10, double palletPrice11, double palletPrice12) {
+        this.palletPrice1 = palletPrice1;
+        this.palletPrice2 = palletPrice2;
+        this.palletPrice3 = palletPrice3;
+        this.palletPrice4 = palletPrice4;
+        this.palletPrice5 = palletPrice5;
+        this.palletPrice6 = palletPrice6;
+        this.palletPrice7 = palletPrice7;
+        this.palletPrice8 = palletPrice8;
+        this.palletPrice9 = palletPrice9;
+        this.palletPrice10 = palletPrice10;
+        this.palletPrice11 = palletPrice11;
+        this.palletPrice12 = palletPrice12;
     }
 
     public TransportCosts(Long idDistanceIn30kmRounded, double palletPrice1, double palletPrice2, double palletPrice3, double palletPrice4, double palletPrice5, double palletPrice6, double palletPrice7, double palletPrice8, double palletPrice9, double palletPrice10, double palletPrice11, double palletPrice12) {
