@@ -32,7 +32,7 @@ public class Agent {
 	private String role = "USER";
 	@Transient // will not be stored in DB
 	private String remember;
-	@OneToMany(mappedBy = "agent")
+	@OneToMany(mappedBy = "agent", fetch = FetchType.EAGER)
 	@JsonIgnore
 	private List<Orders> orders;
 

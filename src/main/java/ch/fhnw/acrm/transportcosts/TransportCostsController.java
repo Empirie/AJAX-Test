@@ -17,49 +17,49 @@ public class TransportCostsController {
 
 
 
-    for (
-    Orders order: agentOrders){
-        sumOfPallets += order.getProducts().getPalletSize() * order.getProduct_quantity();
-    }
+//    for (
+//    Orders order: agentOrders){
+//        sumOfPallets += order.getProducts().getPalletSize() * order.getProduct_quantity();
+//    }
 
 
 
-    public double getFinal(){
+//    public double getFinal(){
+//
+//        switch ((int) sumOfPallets) {
+//            case 1:
+//                double fprice = transportCostsRepository.getById((long) num).getPalletPrice1();
+//                break;
+//            case 2:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 3:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 4:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 5:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 6:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 7:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 8:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 9:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 10: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 11: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            case 12: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//            default: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
+//                break;
+//
+//
+//        }
 
-        switch ((int) sumOfPallets) {
-            case 1:
-                double fprice = transportCostsRepository.getById((long) num).getPalletPrice1();
-                break;
-            case 2:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 3:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 4:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 5:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 6:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 7:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 8:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 9:  fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 10: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 11: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            case 12: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
-            default: fprice = transportCostsRepository.getById((long)num).getPalletPrice2();
-                break;
 
-
-        }
-
-        return getFinal();
-    }
+    
 
 
 }
