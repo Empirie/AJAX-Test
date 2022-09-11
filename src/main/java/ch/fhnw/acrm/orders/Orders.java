@@ -27,6 +27,7 @@ public class Orders {
     private int product_quantity;
 
 
+
     @ManyToOne
     @JoinColumn(name = "agent_id")
     private Agent agent;

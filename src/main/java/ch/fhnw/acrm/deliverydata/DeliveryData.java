@@ -12,8 +12,6 @@ import javax.persistence.*;
 public class DeliveryData {
 
 
-
-
     @Id
     @SequenceGenerator(
             name = "delivery_sequence",
@@ -31,6 +29,8 @@ public class DeliveryData {
     private int pobox;
     private String cityname;
 
+
+
     @OneToOne
     @JoinColumn
     private Agent agent;
@@ -41,7 +41,7 @@ public class DeliveryData {
     public DeliveryData() {
     }
 
-    public DeliveryData(Long id, Long userid, String streetname, int streetnumber, int pobox, String cityname) {
+    public DeliveryData(Long id, String streetname, int streetnumber, int pobox, String cityname) {
         this.id = id;
         this.streetname = streetname;
         this.streetnumber = streetnumber;
@@ -55,8 +55,6 @@ public class DeliveryData {
         this.pobox = pobox;
         this.cityname = cityname;
     }
-
-
 
 
     public Long getId() {
@@ -100,7 +98,6 @@ public class DeliveryData {
     }
 
 
-
     @Override
     public String toString() {
         return "DeliveryData{" +
@@ -112,8 +109,6 @@ public class DeliveryData {
                 ", agent=" + agent +
                 '}';
     }
-
-
 
 
 

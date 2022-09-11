@@ -1,6 +1,7 @@
 package ch.fhnw.acrm.deliverydata;
 
 
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ch.fhnw.acrm.business.service.AgentService;
@@ -24,6 +25,7 @@ public class DeliveryService {
         return deliveryRepository.findAll();
     }
 
+
     public String getGodString(){
 
         String street = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getStreetname();
@@ -32,6 +34,7 @@ public class DeliveryService {
         int po = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getPobox();
         String city = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getCityname();
         String godstring = street + nr + po + city;
+        System.out.println(godstring);
         return godstring;
     }
 
@@ -51,5 +54,13 @@ public class DeliveryService {
 //    }
 
 
+
+
+
+//    String street = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getStreetname();
+//    String nr = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getStreetnumber();
+//
+//    int po = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getPobox();
+//    String city = deliveryRepository.getById(agentService.getCurrentAgent().getId()).getCityname();
 
 }

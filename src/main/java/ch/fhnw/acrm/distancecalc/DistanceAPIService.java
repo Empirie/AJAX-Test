@@ -4,6 +4,7 @@ import ch.fhnw.acrm.products.Products;
 import ch.fhnw.acrm.products.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ch.fhnw.acrm.distancecalc.DistanceAPI.*;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class DistanceAPIService {
         this.productsRepository = productsRepository;
     }
 
+
     public List<Products> getProducts(){
         return productsRepository.findAll();
     }
@@ -31,9 +33,7 @@ public class DistanceAPIService {
 
     }
 
-    public void gg(){
 
-    }
 
 
 }

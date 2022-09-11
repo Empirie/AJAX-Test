@@ -36,16 +36,12 @@ public class DistanceAPI {
         this.deliveryService = deliveryService;
     }
 
-    public DistanceAPI() {
-
+    public String DistanceAPI2() throws Exception {
+    String x = String.valueOf(getData(deliveryService.getGodString()));
+    return x;
     }
 
 
-    public String getGod(){
-        String god = deliveryService.getGodString();
-
-        return god;
-    }
 
 
     //downloading the data
@@ -85,10 +81,13 @@ public class DistanceAPI {
     public static void main(String[] args) throws Exception {
 
         System.out.println("Let's see");
+    
+
 
         getData("Florastrasse40,4057Basel");
         System.out.println("Did it work above?");
-        System.out.println();
+        System.out.println("getData");
+
 
 
 
