@@ -33,7 +33,7 @@
                 <form th:action="@{/saveOrders}" th:object="${orders}" method="POST">
 
 
-
+                    <input type="hidden" th:field="*{pr}" />
                     <input type="number" th:field="*{product_quantity}" class="form-control col-4 mb-4" placeholder="Enter Pallet Size" />
 
                     <button type="submit" class="btn btn-primary col-2">Save</button>
