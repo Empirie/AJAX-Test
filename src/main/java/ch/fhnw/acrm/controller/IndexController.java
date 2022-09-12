@@ -40,7 +40,7 @@ public class IndexController {
 
 @PostMapping(path = "/homepage")
     public String goOrder() {
-    return "orders/list-orders-page";
+    return "/save-orders-page";
     }
 
 }

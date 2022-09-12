@@ -1,16 +1,13 @@
 package ch.fhnw.acrm.orders;
 
 
-import ch.fhnw.acrm.distancecalc.DistanceAPI;
 import ch.fhnw.acrm.products.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(path = "/orders")
 public class OrdersController {
 
     //inject repository in service UNSURE!!!!
@@ -36,7 +33,10 @@ public class OrdersController {
         return mav;
     }
 
-    @GetMapping("/addOrdersView")
+
+
+
+    @GetMapping("/orders")
     public ModelAndView addOrdersForm() {
         ModelAndView mav = new ModelAndView("orders/save-orders-page");
         Orders newOrder = new Orders();
@@ -47,17 +47,29 @@ public class OrdersController {
     @PostMapping("/saveOrders")
     public String saveOrders(@ModelAttribute Orders orders) {
         ordersRepository.save(orders);
-        return "orders_info";
+        return "delivery/save-delivery-page";
     }
 
 
-    @GetMapping("/showUpdateForm")
-    public ModelAndView showUpdateForm(@RequestParam Long id) {
-        ModelAndView mav = new ModelAndView("orders/save-orders-page");
-        Orders orders = ordersRepository.findById(id).get();
-        mav.addObject("orders", orders);
-        return mav;
-    }
+
+
+
+//    //May be really perfect
+//    @RequestMapping(value = "save", method = RequestMethod.POST)
+//    public ModelAndView saveOrders(@ModelAttribute Orders orders) {
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("orders/list-orders-page");
+//        return modelAndView;
+//    }
+
+
+//    @GetMapping("/showUpdateForm")
+//    public ModelAndView showUpdateForm(@RequestParam Long id) {
+//        ModelAndView mav = new ModelAndView("save-orders-pageold");
+//        Orders orders = ordersRepository.findById(id).get();
+//        mav.addObject("orders", orders);
+//        return mav;
+//    }
 
     @GetMapping("/deleteOrders")
     public String deleteOrders(@RequestParam Long id) {
@@ -73,6 +85,21 @@ public class OrdersController {
         mav.addObject("order", seeOrders());
         return mav;
     }
+
+
+
+//    @GetMapping("/welcome")
+//    public String getWelcomePage(){
+//        return "save-orders-page";
+//    }
+
+//    @GetMapping("/welcome")
+//    public ModelAndView addOrdersForm() {
+//        ModelAndView mav = new ModelAndView("products/save-products-page");
+//        Products newProduct = new Products();
+//        mav.addObject("product", newProduct);
+//        return mav;
+
 
 //    @GetMapping
 //    public String getOrdersView(Model model) {

@@ -102,7 +102,7 @@ public class ProductsController {
 
     @GetMapping({"/product_list"})
     public ModelAndView listAllProducts() {
-        ModelAndView mav = new ModelAndView("list-products-pageold");
+        ModelAndView mav = new ModelAndView("products/list-products-page");
         mav.addObject("products", productsRepository.findAll());
         return mav;
     }
